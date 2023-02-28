@@ -38,9 +38,11 @@
 // there should be a red line. If you hover over the line, you will
 // get additional information about the error. In addition, all the
 // errors are available in a separate panel at the bottom of the page
+// errors are available in a separate panel at the bottom of the page
 // (bottom left, look for an x inside a circle).
 
 // Start fixing the first error, more errors might pop up, because the first
+// error was blocking the execution of the code inspection
 // error was blocking the execution of the code inspection
 // (and of the auto-formatting).
 
@@ -51,15 +53,14 @@
 
 // Fix the two errors below with a red-line underneath.
 
-// a. Hint:
-//follow the pattern.
-a = 1;
-var b = 2;
-var c = 3;
+// a. Hint: follow the pattern.
+whatever = 1;
+b = 2;
+c = 3;
 
 // b. Hint: This function needs a name after the word function.
-function hello() {
-    console.log("Hello!");
+function sayHello() {
+  console.log("Hello!");
 }
 
 // EXERCISE 2. Producticity: Shorcuts and More.
@@ -74,7 +75,7 @@ function hello() {
 // or Cmd-/ (Mac). Notice if you apply the command multiple times, it will
 // uncomment/comment/uncomment... it.
 
-uselessCode = "I am useless";
+// uselessCode = 'I am useless';
 
 // b. Cool. What other shorcuts are available? Here is a shortcut to find
 // them all. Ctrl-Shift-P. Look around and remember how to get here,
@@ -87,16 +88,16 @@ uselessCode = "I am useless";
 // a new cursor, so you can write multiple rows at once. Delete the word "not"
 // and replace the explanation mark with a sad face.
 
-catchMeIfYouCan1 = "You did not catch me!";
-catchMeIfYouCan2 = "You did not catch me!";
-catchMeIfYouCan3 = "You did not catch me!";
+catchMeIfYouCan1 = "You did catch me!";
+catchMeIfYouCan2 = "You did catch me!";
+catchMeIfYouCan3 = "You did catch me!";
 
 // d. Sometimes you want to move an entire line of code up or down. Of course
 // there is a shortcut for that: Alt-ArrowUp/Down.
 
 // Order the lines below accordingly.
-console.log("2. I would like to go below.");
 console.log("1. I would like to go above.");
+console.log("2. I would like to go below.");
 
 // Great! To learn more about key bindings, see:
 // - https://code.visualstudio.com/docs/getstarted/keybindings
@@ -117,8 +118,10 @@ console.log("1. I would like to go above.");
 // Or check the keybindings link in the previous exercise to format only a
 // portion of the code.
 
-if (a == 0) {
-    a--;
+let a = 1234;
+a++;
+if (a > 123) {
+  a--;
 } else a++;
 console.log(a);
 
@@ -146,7 +149,7 @@ console.log(a);
 // bracket get highlighted?
 
 if (b + c > 1) {
-    console.log("Hei!");
+  console.log("Hei!");
 }
 
 // b. That was easy. In more complicated cases, you might want to use a
@@ -174,6 +177,9 @@ if (b + c > 1) {
 // d. Good! Your changes are saved. If you have the permissions, you will
 // be able to push your code online, clicking on "Push Changes".
 // If not, you might have cloned the main repo of the exercises, instead of
+// d. Good! Your changes are saved. If you have the permissions, you will
+// be able to push your code online, clicking on "Push Changes".
+// If not, you might have cloned the main repo of the exercises, instead of
 // your forked copy.
 
 // EXERCISE 6. Code Runner.
@@ -182,21 +188,26 @@ if (b + c > 1) {
 
 // You got to have the Code Runner extension installed.
 // If you haven't done it yet, what are you waiting for then?
+// You got to have the Code Runner extension installed.
+// If you haven't done it yet, what are you waiting for then?
 // Open the Extensions pane on the left (usually, fourth icon from the top) and
 // search for "Code Runner". Install it
 
 // a. Try to execute the following code by highlighting it, and then
 // pressing Ctrl-Alt-N. (You can also do, Right Click and then select the
+// pressing Ctrl-Alt-N. (You can also do, Right Click and then select the
 // "Run Code" from the context menu).
 
+let outcome = "Yes, I made it!";
 let outcome = "Yes, I made it!";
 console.log(outcome);
 
 // b. Did it work? If so, try the following:
 
 console.log("I want to say it 10 times:");
+console.log("I want to say it 10 times:");
 for (let i = 0; i < 10; i++) {
-    console.log(i + 1 + ": " + outcome);
+    console.log(i + 1 + ': ' + outcome);
 }
 console.log("Mike drop.");
 
