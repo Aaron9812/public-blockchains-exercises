@@ -44,7 +44,6 @@ const ethers = require("ethers");
 // parameters it needs (nested hint: you need something from the .env file).
 
 const providerKey = process.env.INFURA_KEY;
-
 const mainnetInfuraUrl = `${process.env.INFURA_MAINNET}${providerKey}`;
 // console.log(mainnetInfuraUrl);
 const mainnetProvider = new ethers.JsonRpcProvider(mainnetInfuraUrl);

@@ -19,8 +19,8 @@
 // a. Require the `dotenv` and `ethers` packages.
 // Hint: As you did in file 1_wallet and 2_provider.
 
-require('dotenv').config();
-const ethers = require("ethers");
+require("dotenv").config();
+const { ethers } = require("ethers");
 
 // b. Create a Goerli provider.
 
@@ -42,7 +42,6 @@ const goerliProvider = new ethers.JsonRpcProvider(goerliInfuraUrl);
 
 // Hint: a signer is a wallet.
 // Hint2: if you get an error here, check that the private key begins with "0x".
-
 let signer = new ethers.Wallet(process.env.METAMASK_1_PRIVATE_KEY);
 console.log(signer.address);
 
