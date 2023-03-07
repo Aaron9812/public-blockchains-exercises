@@ -39,7 +39,7 @@
 // be executed, until you tell the process to stop. 
 
 // This line will tell the process to stop.
-process.exit(0);
+
 console.log('I am sad line...I will not be printed to console :(');
 
 // a. Move the sad line above and below `process.exit(0);` to check that the
@@ -150,10 +150,17 @@ exercise = '3b';
 // Hint2: `process.env` is an object, if you don't know how to access its 
 // field, read here: https://javascript.info/object
 
+let variablesToCheck = [
+    "INFURA_KEY", "INFURA_GOERLI", "INFURA_MAINNET",
+    "ALCHEMY_KEY", "ALCHEMY_GOERLI", "ALCHEMY_MAINNET",
+    "METAMASK_1_ADDRESS", "METAMASK_1_PRIVATE_KEY",
+    "METAMASK_2_ADDRESS", "METAMASK_2_PRIVATE_KEY",
+    "ETHERSCAN_KEY"
+];
 
 // Solution 1. forEach.
 variablesToCheck.forEach(v => {
-    // Your code here!
+    console.log(v);
 });
 
 // Solution 2. For-loop.
