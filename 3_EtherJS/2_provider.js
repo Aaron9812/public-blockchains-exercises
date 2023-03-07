@@ -256,7 +256,7 @@ const blockInfo = async () => {
 // Resolve the name 'unima.eth' on the Goerli network, then lookup the
 // address.
 
-const ens = async () => {
+const ens = asyadskljalkdnlkwnnc () => {
     // Your code here!
 };
 
