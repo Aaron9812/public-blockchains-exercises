@@ -12,11 +12,10 @@
 
 // https://docs.soliditylang.org/en/latest/index.html
 
-
 // Exercise 0. Make sure you environment is set up.
 ///////////////////////////////////////////////////
 
-// In 4_Hardhat you have learnt to init a new Hardhat project. 
+// In 4_Hardhat you have learnt to init a new Hardhat project.
 // Now, let's do it again! Create a new folder and run `npx hardhat`.
 // If you wish you might also re-use the old project folder. In either case,
 // you need to run this file from a hardhat project's directory.
@@ -44,18 +43,31 @@
 // a. What is the meaning of the `pragma` directive at the top of the file?
 // Hint: https://solidity-by-example.org/hello-world/
 
+//The version of solidity we want to use
+
 // b. The pragma value must be compatible with the version of solidity
 // in `hardhat.config.js. Try to set the value to a lower or higher number
 // and to compile the Lock file. What happens?
 // Hint: npx hardhat compile
 
+// It gives an error because the version of solidity is not compatible with the pragma value
+
 // c. Checkpoint. What is the meaning of that caret symbol (^) ?
 // Hint: https://docs.soliditylang.org/en/develop/layout-of-source-files.html#version-pragma
 // Hint2: https://bytearcher.com/articles/semver-explained-why-theres-a-caret-in-my-package-json/
 
+// The caret symbol (^) means that the compiler will use the latest version of solidity that is compatible with the version specified in the pragma value.
+
+// The prefix character (^) has to do with a version numbering scheme called Semantic Versioning or semver.
+// Semantic Versioning dictates what kind of changes cause the version number to be incremented. 
+// Semver uses three-part version number like 3.9.2 and calls these three numbers from left to right as the major,
+// minor and patch numbers.
+
 // c. Before `pragma` there is an important comment tha sets the license of
 // the contract. Pick a license for your contract.
 // Hint: https://docs.soliditylang.org/en/develop/layout-of-source-files.html#spdx-license-identifier
+
+// SPDX-License-Identifier: MIT
 
 // d. The code of the Lock contract is introduced by the `contract` keyword
 // and wrapped in curly braces { ... }. Before `contract` you have the option
@@ -109,7 +121,7 @@
 // (after deployment). Notice the difference if you declare it public or not.
 
 // c. The new variable you created at point b. is never changing, i.e., it is
-// a constant. To optimize your code, you could declare it as a constant 
+// a constant. To optimize your code, you could declare it as a constant
 // (follow the convention), then query it with Ethers.JS.
 
 // Hint: https://solidity-by-example.org/constants/
@@ -123,21 +135,21 @@ async function readVar() {
     console.log("Exercise 1: Read Var");
 
     // You need to get a signer and a contract.
-    // Hint: use methods .getContractAt and .getSigners as we did in 
+    // Hint: use methods .getContractAt and .getSigners as we did in
     // 4_Hardhat/2_ex_deploy.js
 
     // Your code here!
-};
+}
 
 // readVar();
 
 // Bonus. Exercise 2B. Utility Function.
 ////////////////////////////////////////
 
-// In exercise 2, we accessed the contract and the signers from Hardhat. 
+// In exercise 2, we accessed the contract and the signers from Hardhat.
 // We will do it often in the exercises below, so it will be useful to write
 // a concise function to return a contract for a given signer and the signer
-// itself. 
+// itself.
 
 // The function could take the following input parameters:
 // 1. Contract name
@@ -145,14 +157,12 @@ async function readVar() {
 // 3. Index of the signer among Hardhat's signers
 
 // Hint1: return the default signer (index 0), if no signer index is specified
-// Hint2: return an array of [ contract, signer ] and use "array 
+// Hint2: return an array of [ contract, signer ] and use "array
 // destruction" for quicker assignment outside of the function.
 // https://www.javascripttutorial.net/javascript-return-multiple-values/
 
 async function getContractAndSigner(cName, cAddress, signerIdx = 0) {
-  
     // Your code here!
-
 }
 
 // Exercise 3. Constructor.
@@ -225,10 +235,10 @@ constructor();
 // Hint2: when you listen for events the process won't exit automatically, and
 // you need to invoke Ctrl-C to stop it.
 
-// d. Now, redeploy the same contract and try to withdraw from an 
+// d. Now, redeploy the same contract and try to withdraw from an
 // unauthorized address. How many events are emitted in this case? 1, 2, or 0?
 
-// Checkpoint. The `require` command reverts completely a transaction if 
+// Checkpoint. The `require` command reverts completely a transaction if
 // conditions are not met. It's all or nothing. If a transaction is reverted,
 // no changes at all are taking place, meaning that no event is ever emitted,
 // even if the require statement comes _after_ the emit statement.
@@ -270,13 +280,13 @@ async function getAllEvents() {
 // Let's modify the Lock contract to support multiple owners and fractional
 // widthdrawals. Let's call the new contract Lock4.
 
-// a. The first owner is the creator of the contract, but owners can 
+// a. The first owner is the creator of the contract, but owners can
 // be added at any time.
 // Hint: you need a mapping and a new method to add owners.
 
 // b. The withdraw method now returns a fraction of the value locked. For
 // instance, if the contract has three owners, each owner is entitled to
-// withdraw the value locked divided by three.  
+// withdraw the value locked divided by three.
 
 // Hint: the payable keyword defines method and addresses that can receive
 // ether into the contract.
@@ -300,14 +310,11 @@ async function mappings() {
 
 const checkBalanceBeforeAfter = async (signer, lockContract) => {
     // Check the balance change for signer.
-  
     // Your code here!
-    
 };
 
-const getContractStatus = async lockContract => {
+const getContractStatus = async (lockContract) => {
     // Report info about contract.
-  
     // Your code here!
 };
 
