@@ -334,6 +334,7 @@ const resubmitTransaction = async () => {
 
     // Note: the line below will return the _next_ nonce when there is
     // already a transaction in the mempool.
+    
     // let nextNonce = await signer.getNonce("pending");
 
     console.log('Nonce is:', nonce);
